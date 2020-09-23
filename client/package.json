@@ -1,0 +1,42 @@
+{
+  "name": "front-end-capstone",
+  "version": "1.0.0",
+  "description": "A project.",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack -d --watch",
+    "start:react": "react-scripts start"
+  },
+  "author": "Scrumdog Millionaires",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "@material-ui/core": "^4.11.0",
+    "axios": "^0.18.1",
+    "babel-loader": "^8.0.5",
+    "backbone": "^1.3.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.17.2",
+    "concurrently": "^5.3.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4",
+    "mysql": "^2.14.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-scripts": "^3.4.1",
+    "reactstrap": "^8.6.0",
+    "underscore": "^1.8.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
