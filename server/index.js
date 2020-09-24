@@ -1,17 +1,16 @@
+/* eslint-disable no-unused-vars */
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
 
-const dir = path.join('kg-product-detail-page', '/../client/dist');
+const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 9000;
-// const getApiData = require('./api-helper.js');
+const getApiData = require('./api-helper.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static((dir)));
+app.use(express.static(`${__dirname}/../client/dist`));
 
 // Requests here
 
