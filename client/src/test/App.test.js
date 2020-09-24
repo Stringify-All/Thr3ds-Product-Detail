@@ -16,9 +16,7 @@ describe('App', () => {
     const wrapper = mount(<App />);
     expect(wrapper).toMatchSnapshot();
   });
-});
 
-describe('App', () => {
   it('has a button with className button-large', () => {
     const wrapper = mount(<App />);
     expect(wrapper.find('.button-large')).toBeDefined;
