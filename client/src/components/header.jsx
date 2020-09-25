@@ -6,10 +6,9 @@ const Header = () => (
 
     <Jumbotron fluid>
     <Container>
-      <h1>Fluid jumbotron</h1>
+      <h1>Thr3ds</h1>
       <p>
-        This is a modified jumbotron that occupies the entire horizontal space of
-        its parent.
+        What's fresher than fresh? Hygenic. 
       </p>
     </Container>
   </Jumbotron>

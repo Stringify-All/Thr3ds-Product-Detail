@@ -21,4 +21,20 @@ describe('App', () => {
     const wrapper = mount(<App />);
     expect(wrapper.find('.button-large')).toBeDefined;
   });
+
+  it('has a main photo carousel component', () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.find('PhotoCarousel')).toBeDefined;
+  });
+
+  it('has a main jumbotron component', () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.find('Header')).toBeDefined;
+  });
+
+  it('has a style selector component', () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.find('Styles')).toBeDefined;
+  });
 });
+

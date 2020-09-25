@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     getProducts()
       .then((data) => {
-        console.log('response: ', data);
+        // console.log('response: ', data);
         setProductList(data);
       })
       .catch((err) => {
