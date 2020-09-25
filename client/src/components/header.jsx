@@ -3,7 +3,6 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
 const Header = () => (
-
     <Jumbotron fluid>
     <Container>
       <h1>Thr3ds</h1>
@@ -12,6 +11,6 @@ const Header = () => (
       </p>
     </Container>
   </Jumbotron>
-  )
+);
 
 export default Header; 

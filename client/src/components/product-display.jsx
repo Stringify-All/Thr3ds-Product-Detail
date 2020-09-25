@@ -1,56 +1,45 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import styled from 'styled-components';
 
+const CarouselSection = styled.div`
+  background: black;
+  border-radius: 3px;
+  margin: 0.5em 1em;
+  padding-left: 0.25em;
+  size: 50%;
+`
 
-const PhotoCarousel = () => {
+const PhotoCarousel = ({products}) => {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-
-  return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-
-      <Carousel.Item>
+  
+  const ProductRender = products.map((product) => {
+    return (
+      <Carousel.Item key={product.id}>
         <img
           className="d-block w-100"
           src="https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png"
           alt="Placeholder"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>{product.name}</h3>
+          <p>{product.slogan}</p>
         </Carousel.Caption>
       </Carousel.Item>
+    );
+  });
 
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png"
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png"
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-    </Carousel>
+  return (
+    <>
+      <CarouselSection />
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          {ProductRender}
+        </Carousel>
+    </>
   );
 }
 
