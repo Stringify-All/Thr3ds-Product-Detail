@@ -5,6 +5,7 @@ import getProductInfo from '../API/GetProductInfo';
 import Header from './Header';
 import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
+import SloganDescription from './SecondaryDescription';
 import RelatedStyles from './StyleSelector';
 
 const App = () => {
@@ -31,21 +32,16 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel products={productList}/>
+            <PhotoCarousel products={productList} />
           </div>
 
           <div class="col-sm-4">
-            <ProductDescription selected={selectedProduct}/>
+            <ProductDescription selected={selectedProduct} />
             <RelatedStyles /> 
           </div>
         </div>
-
-        <div class="row">  
-          <div class="col-sm-12">
-            <h1> Dangerzone. </h1>
-            <p> Long Live the Scrumdog Billionaires </p>
-          </div>
-        </div>
+        
+        <SloganDescription selected={selectedProduct} />
     </div>
     </>
   );

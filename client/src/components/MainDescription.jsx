@@ -6,11 +6,16 @@ const ProductDescription = ({selected}) => {
 
   return ( 
     <React.Fragment>
-      <div> 
-        {selected.name} 
-      </div>
       <div>
-        {selected.description}
+        <div>
+          {selected.category}
+        </div>
+        <div> 
+          <h3>{selected.name}</h3>
+        </div>
+        <div>
+          ${selected.default_price}
+        </div>
       </div>
     </React.Fragment>
   );
