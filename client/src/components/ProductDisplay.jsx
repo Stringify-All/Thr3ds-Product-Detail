@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
+import getProductInfo from '../API/GetProductInfo';
 
 const CarouselSection = styled.div`
   background: black;
-  border-radius: 3px;
+  border: 1px solid black;
   margin: 0.5em 1em;
-  padding-left: 0.25em;
-  size: 50%;
-`
+  flex: 1;
+`;
 
 const PhotoCarousel = ({products}) => {
   const [index, setIndex] = useState(0);
@@ -27,7 +27,6 @@ const PhotoCarousel = ({products}) => {
         />
         <Carousel.Caption>
           <h3>{product.name}</h3>
-          <p>{product.slogan}</p>
         </Carousel.Caption>
       </Carousel.Item>
     );
@@ -35,10 +34,11 @@ const PhotoCarousel = ({products}) => {
 
   return (
     <>
-      <CarouselSection />
+      <CarouselSection>
         <Carousel activeIndex={index} onSelect={handleSelect}>
           {ProductRender}
         </Carousel>
+      </CarouselSection>
     </>
   );
 }
