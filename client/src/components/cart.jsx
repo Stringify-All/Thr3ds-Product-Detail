@@ -1,13 +1,15 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 
+
 const Cart = () => {
+  {/* API Data: user session*/}
   
   return (
-    <div>
+    <React.Fragment>
       <Card />
       Cart icon will go here. 
-    </div>
+    </React.Fragment>
   )
 };
 

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
-import getProductInfo from '../API/GetProductInfo';
 
 const CarouselSection = styled.div`
-  background: black;
   border: 1px solid black;
   margin: 0.5em 1em;
-  flex: 1;
+  display: flex;
 `;
 
 const PhotoCarousel = ({products}) => {

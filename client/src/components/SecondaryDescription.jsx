@@ -14,6 +14,16 @@ const SloganDesc = styled.p`
   list-style: none;
 `;
 
+const Line = styled.section`
+  border-left: 1px solid gray;
+  height: 100px;
+  position: absolute;
+`;
+
+const ColumnPadding = styled.section`
+  padding-top: 20px;
+`;
+
 const SloganDescription = ({selected}) => {
 
   return (
@@ -28,10 +38,13 @@ const SloganDescription = ({selected}) => {
           </SloganDesc>
         </div>
         <div class="col-sm-4">
-          <SloganDesc>
-            <li>✓ Placeholder for features</li>
-            <li>✓ Placeholder for features</li>
-          </SloganDesc>
+          <ColumnPadding>
+            <Line></Line>
+            <SloganDesc>
+              <li>✓ Placeholder for features</li>
+              <li>✓ Placeholder for features</li>
+            </SloganDesc>
+          </ColumnPadding>
         </div>
       </div>
     </div>
