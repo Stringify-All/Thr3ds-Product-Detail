@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GlobalStyle from './globalStyle';
 import getProducts from '../API/GetProducts';
 import getProductInfo from '../API/GetProductInfo';
+import getProductStyles from '../API/GetProductStyles';
 import Header from './Header';
 import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
@@ -11,7 +12,7 @@ import RelatedStyles from './StyleSelector';
 const App = () => {
 
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(1);
 
   useEffect(() => {
     getProducts()
@@ -20,11 +21,11 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    getProductInfo(1)
+    getProductInfo(selectedProduct)
       .then((data) => setSelectedProduct(data))
       .catch((err) => console.log(err));
   }, []);
-  
+
   return (
     <>
     <GlobalStyle />
@@ -32,7 +33,7 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel products={productList} />
+            <PhotoCarousel />
           </div>
 
           <div class="col-sm-4">
