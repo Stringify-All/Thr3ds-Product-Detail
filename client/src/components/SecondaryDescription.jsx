@@ -26,6 +26,21 @@ const ColumnPadding = styled.section`
 
 const SloganDescription = ({selected}) => {
 
+  const FeatureRender = () => {
+    if (selected.features !== undefined) { 
+      return (
+        selected.features.map((feature) => (
+        <div>
+          <li><b>{feature.feature}</b></li>
+          <li>✓ {feature.value}</li>
+        </div>
+        )
+      )
+    )} else {
+      return (<div>Loading Features...</div>);
+    };
+  }
+
   return (
     <div class="container">
       <div class="row">  
@@ -41,8 +56,7 @@ const SloganDescription = ({selected}) => {
           <ColumnPadding>
             <Line></Line>
             <SloganDesc>
-              <li>✓ Placeholder for features</li>
-              <li>✓ Placeholder for features</li>
+              { FeatureRender() }
             </SloganDesc>
           </ColumnPadding>
         </div>
