@@ -7,6 +7,7 @@ const ProductDescription = ({selected}) => {
   return ( 
     <React.Fragment>
       <div>
+        <div>* * * * * ratings here</div>
         <div>
           {selected.category}
         </div>

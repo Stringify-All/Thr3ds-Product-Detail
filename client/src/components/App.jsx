@@ -12,7 +12,8 @@ import RelatedStyles from './StyleSelector';
 const App = () => {
 
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(5);
+  const [currentStyle, setCurrentStyle] = useState([]);
 
   useEffect(() => {
     getProducts()
@@ -26,6 +27,12 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    getProductStyles(selectedProduct)
+      .then((data) => setCurrentStyle(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
     <GlobalStyle />
@@ -33,12 +40,12 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel />
+            <PhotoCarousel currentStyle={currentStyle.results} />
           </div>
 
           <div class="col-sm-4">
             <ProductDescription selected={selectedProduct} />
-            <RelatedStyles /> 
+            <RelatedStyles related={currentStyle}/> 
           </div>
         </div>
         

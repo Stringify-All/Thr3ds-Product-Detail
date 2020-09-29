@@ -10,30 +10,17 @@ const CarouselSection = styled.section`
   max-height: 600;
 `;
 
-const StyledImage = styled(Image)`
-  
-`;
-
-
-const PhotoCarousel = () => {
+const PhotoCarousel = ({currentStyle}) => {
   const [index, setIndex] = useState(0);
-  const [selectedProduct, setSelectedProduct] = useState(1);
-  const [currentStyle, setCurrentStyle] = useState([]);
-  
-  useEffect(() => {
-    getProductStyles(selectedProduct)
-      .then((data) => setCurrentStyle(data.results[1]))
-      .catch((err) => console.log(err));
-  }, []);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-  
+
   const ProductRender = () => {
-    if (currentStyle.photos !== undefined) { 
+    if (currentStyle !== undefined) { 
       return (
-        currentStyle.photos.map((photo) => (
+        currentStyle[0].photos.map((photo) => (
         <Carousel.Item key={currentStyle.style_id}>
             <img
               class="img-fluid"

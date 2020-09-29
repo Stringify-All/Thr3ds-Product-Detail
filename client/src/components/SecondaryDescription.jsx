@@ -8,7 +8,7 @@ const SloganHeader = styled.h1`
   font-style: bold;
 `;
 
-const SloganDesc = styled.p`
+const SloganDesc = styled.div`
   padding-left: 20px;
   font-size: 14px;
   list-style: none;
