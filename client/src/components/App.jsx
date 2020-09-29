@@ -12,8 +12,9 @@ import RelatedStyles from './StyleSelector';
 const App = () => {
 
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(5);
+  const [selectedProduct, setSelectedProduct] = useState(1);
   const [currentStyle, setCurrentStyle] = useState([]);
+  const [selectedStyle, setSelectedStyle] = useState(1);
 
   useEffect(() => {
     getProducts()
@@ -45,7 +46,7 @@ const App = () => {
 
           <div class="col-sm-4">
             <ProductDescription selected={selectedProduct} />
-            <RelatedStyles related={currentStyle}/> 
+            <RelatedStyles styles={currentStyle} selected={selectedStyle}/> 
           </div>
         </div>
         
