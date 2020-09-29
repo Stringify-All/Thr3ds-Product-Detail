@@ -5,20 +5,18 @@ import styled from 'styled-components';
 const ProductDescription = ({selected}) => {
 
   return ( 
-    <React.Fragment>
+    <>
+      <div>* * * * * ratings here</div>
       <div>
-        <div>* * * * * ratings here</div>
-        <div>
-          {selected.category}
-        </div>
-        <div> 
-          <h3>{selected.name}</h3>
-        </div>
-        <div>
-          ${selected.default_price}
-        </div>
+        {selected.category}
       </div>
-    </React.Fragment>
+      <div> 
+        <h3>{selected.name}</h3>
+      </div>
+      <div>
+        ${selected.default_price}
+      </div>
+    </>
   );
 }
 

@@ -28,9 +28,11 @@ const GlobalStyle = createGlobalStyle`
     border-color: #056676;
     color: #056676;
     border: 1px solid-#e8ded2;
-    border-radius: 4px;
-    padding: 15px 32px;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: block;
   }
 
   button:hover {

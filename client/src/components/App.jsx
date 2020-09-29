@@ -3,6 +3,7 @@ import GlobalStyle from './globalStyle';
 import getProducts from '../API/GetProducts';
 import getProductInfo from '../API/GetProductInfo';
 import getProductStyles from '../API/GetProductStyles';
+import AddItem from './AddToCart';
 import Header from './Header';
 import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
@@ -47,9 +48,9 @@ const App = () => {
           <div class="col-sm-4">
             <ProductDescription selected={selectedProduct} />
             <RelatedStyles styles={currentStyle} selected={selectedStyle}/> 
+            <AddItem />
           </div>
         </div>
-        
         <SloganDescription selected={selectedProduct} />
     </div>
     </>

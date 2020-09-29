@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import getProductStyles from '../API/GetProductStyles';
+import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
 
 const CarouselSection = styled.section`
-  border: 1px solid black;
   display: flex;
   max-width: 500;
   max-height: 600;

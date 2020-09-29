@@ -40,14 +40,14 @@ const RelatedStyles = ({styles, selected}) => {
         </div>)
     } else {
       return (<div>Loading...</div>)
-    }
-  }
+    };
+  };
 
   return (
     <div>
       { ThumbnailRender() }
     </div>
   );
-}
+};
 
 export default RelatedStyles;
