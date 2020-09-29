@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AddItemButton from './buttons/AddItemButton';
+import QuantityButton from './buttons/QuantitySelector';
+import SelectSizeButton from './buttons/SizeSelector';
 import styled from 'styled-components';
 
+const AddItem = ({cartData}) => {
+  const [size, setSize] = useState(cartData[0])
 
-
-const AddItem = () => {
   return (
     <>
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <button>Select Size</button>
+            <SelectSizeButton sizes={cartData}/>
           </div>
           <div class="col-md-4">
-            <button>1</button>
+            <QuantityButton quantities={cartData}/>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10">
-            <button type="submit">Add To Bag +</button>
+            <AddItemButton />
           </div>
           <div class="col-md-2">
             <button>*</button>

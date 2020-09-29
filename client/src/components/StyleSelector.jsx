@@ -13,16 +13,15 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const RelatedStyles = ({styles, selected}) => {
+const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
   const classes = useStyles();
-  console.log('selected: ', selected)
-
+  
   const ThumbnailRender = () => {
-    if (styles.results !== undefined) {
+    if (relatedStyles !== undefined) {
       return (
         <div class="container">
           <div class="row">
-            {styles.results.map((style) => (
+            {relatedStyles.map((style) => (
               <div key="style.style_id" class="col-sm-3">
               <Badge
                 badgeContent="✓"
@@ -32,7 +31,8 @@ const RelatedStyles = ({styles, selected}) => {
               <Avatar
                 src={style.photos[0].thumbnail_url}
                 alt={style.name}
-                className={classes.small}/>
+                className={classes.small}
+                onClick={() => selectedStyleHandler(style)}/>
               </Badge>
               </div>
             ))}

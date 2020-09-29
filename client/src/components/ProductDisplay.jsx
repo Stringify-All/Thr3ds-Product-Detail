@@ -16,9 +16,9 @@ const PhotoCarousel = ({currentStyle}) => {
   };
 
   const ProductRender = () => {
-    if (currentStyle !== undefined) { 
+    if (currentStyle.photos !== undefined) { 
       return (
-        currentStyle[0].photos.map((photo) => (
+        currentStyle.photos.map((photo) => (
         <Carousel.Item key={currentStyle.style_id}>
             <img
               class="img-fluid"

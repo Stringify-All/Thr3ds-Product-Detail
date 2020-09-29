@@ -22,14 +22,14 @@ const CartDisplay = styled.section`
   padding-right: 25px;
 `;
 
-const Header = () => (
+const Header = ({userSessionData}) => (
   <HeaderStyle>
     <Container>
       <h1>Thr3ds</h1>
       <p>What's fresher than fresh? Hygenic.</p>
     </Container>
       <CartDisplay>
-        <Cart />
+        <Cart userSessionData={userSessionData}/>
       </CartDisplay>
   </HeaderStyle>
 );
