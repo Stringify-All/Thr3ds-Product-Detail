@@ -6,6 +6,7 @@ const CarouselSection = styled.section`
   display: flex;
   max-width: 500;
   max-height: 600;
+  object-fit: cover;
 `;
 
 const PhotoCarousel = ({currentStyle}) => {

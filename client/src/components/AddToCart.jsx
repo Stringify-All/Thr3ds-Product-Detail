@@ -9,13 +9,15 @@ const AddItem = ({styleData}) => {
   const name = styleData.name;
   const price = styleData.original_price - styleData.sale_price;
   const [selectedSize, setSelectedSize] = useState('');
+  const [quantity, setQuantity] = useState(1)
   
   const cartValues = {
     name: name,
     price: price,
     size: selectedSize,
-    quantity: null,
+    quantity: quantity,
     added: false,
+    total_price: (price * quantity),
   };
 
   console.log('cart values: ', cartValues);
@@ -26,15 +28,18 @@ const AddItem = ({styleData}) => {
         <div class="row">
           <div class="col-md-8">
             <SelectSizeButton sizes={styleData} 
-            sizeSelector={setSelectedSize}/>
+            sizeSelector={setSelectedSize}
+            size={selectedSize}/>
           </div>
           <div class="col-md-4">
-            <QuantityButton quantities={styleData}/>
+            <QuantityButton quantities={styleData}
+            quantitySelector={setQuantity}
+            size={selectedSize}/>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10">
-            <AddItemButton />
+            <AddItemButton cartValues={cartValues}/>
           </div>
           <div class="col-md-2">
             <button>*</button>

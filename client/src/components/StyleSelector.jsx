@@ -33,7 +33,7 @@ const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
                 badgeContent="✓"
                 color="secondary"
                 overlap="circle"
-                invisible={(selected)}>
+                invisible={selected}>
               <Avatar
                 src={style.photos[0].thumbnail_url}
                 alt={style.name}

@@ -7,13 +7,13 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
   
   if (sizes.skus !== undefined) {
     const skuArray = Object.keys(sizes.skus);
-    console.log('Sku array: ', skuArray)
+
     return ( 
       <PopupState variant="popover" popupId="size-popup-menu">
         {(popupState) => (
           <>
             <button {...bindTrigger(popupState)}>
-              Select Size
+              Select Size v
             </button>
             <Menu {...bindMenu(popupState)}>
               {(skuArray.map(sku => (
