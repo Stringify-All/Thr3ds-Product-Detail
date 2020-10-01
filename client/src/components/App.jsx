@@ -51,8 +51,6 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log('user session data: ', userSessionData);
-
   return (
     <>
     <GlobalStyle />
@@ -62,17 +60,20 @@ const App = () => {
           <div class="col-sm-8">
             <PhotoCarousel currentStyle={currentStyle} />
           </div>
-
           <div class="col-sm-4">
-            <ProductDescription selected={selectedProduct} />
+            <ProductDescription 
+            selected={selectedProduct} 
+            style={currentStyle} />
             <RelatedStyles
             selectedStyleHandler={setCurrentStyle}
             selected={currentStyle}
             relatedStyles={relatedStyles}/>
-            <AddItem cartData={currentStyle}/>
+            <AddItem styleData={currentStyle}/>
           </div>
         </div>
-        <SloganDescription selected={selectedProduct} />
+        <SloganDescription 
+        selected={selectedProduct}
+        style={currentStyle} />
     </div>
     </>
   );
