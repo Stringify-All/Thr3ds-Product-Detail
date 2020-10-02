@@ -1,16 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import Box from '@material-ui/core/Box';
+import StarRating from './StarRatings';
 import { 
   FacebookShareButton, FacebookIcon,
   TwitterShareButton, TwitterIcon, 
   TumblrShareButton, TumblrIcon, 
   RedditShareButton, RedditIcon } from 'react-share';
 
-const ProductDescription = ({selected, style}) => {
+const ProductDescription = ({selected, style, ratings}) => {
   const url = "https://www.youtube.com/watch?v=siwpn14IE7E";
 
   const ShareFacebook = () => {
     return (
+      <Box p={1}>
       <FacebookShareButton
         url={url}
         quote={selected.slogan}
@@ -18,11 +20,13 @@ const ProductDescription = ({selected, style}) => {
         className="facebook-share-button">
           <FacebookIcon size={26} round={true}/>
         </FacebookShareButton>
+      </Box>
     );
   };
   
   const ShareReddit = () => {
     return (
+      <Box p={1}>
       <RedditShareButton
         url={url}
         quote={selected.slogan}
@@ -30,11 +34,13 @@ const ProductDescription = ({selected, style}) => {
         className="reddit-share-button">
           <RedditIcon size={26} round={true}/>
         </RedditShareButton>
+        </Box>
     );
   };
 
   const ShareTwitter = () => {
     return (
+      <Box p={1}>
       <TwitterShareButton
         url={url}
         quote={selected.slogan}
@@ -42,11 +48,13 @@ const ProductDescription = ({selected, style}) => {
         className="twitter-share-button">
           <TwitterIcon size={26} round={true}/>
         </TwitterShareButton>
+        </Box>
     );
   };
 
   const ShareTumblr = () => {
     return (
+      <Box p={1}>
       <TumblrShareButton
         url={url}
         quote={selected.slogan}
@@ -54,6 +62,7 @@ const ProductDescription = ({selected, style}) => {
         className="tumblr-share-button">
           <TumblrIcon size={26} round={true}/>
         </TumblrShareButton>
+      </Box>
     );
   };
 
@@ -76,7 +85,7 @@ const ProductDescription = ({selected, style}) => {
             </div>
           </div>
         </div>
-          <div>* * * * * ratings here</div>
+          <StarRating ratings={ratings}/>
         <div>
           <p><b>Category &gt; </b>{selected.category}</p>
         </div>
@@ -84,15 +93,15 @@ const ProductDescription = ({selected, style}) => {
           <h3>{selected.name}</h3>
         </div>
         <div>
-          <p><b>Current style &gt; </b>{style.name}</p>
+          <p><b>Current style &gt; </b>{style.name}</p> 
         </div>
         <div>
           ${style.original_price}
-        </div>
+        </div> 
         </>
     );
   } else {
-    return (<div>Please select a style</div>);
+    return (<div></div>);
   }
 }
 

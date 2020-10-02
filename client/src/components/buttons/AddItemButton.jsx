@@ -1,12 +1,11 @@
 import React from 'react';
 
-const AddItemButton = () => {
-  const newUserSession = 1234 + 1;
+const AddItemButton = ({addToCart}) => {
 
-  
     return(
     <>
-      <button>Add To Bag +</button>
+      <button type="submit" 
+      onClick={() => addToCart()}>Add To Bag +</button>
     </>
   )
 };

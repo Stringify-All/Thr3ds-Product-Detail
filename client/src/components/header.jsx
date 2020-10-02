@@ -2,6 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import Cart from './Cart';
+import Searchbar from './Searchbar';
+
+const SearchbarStyle = styled.div`
+  display: flex;
+  padding-right: 2em;
+`;
 
 const HeaderStyle = styled.section`
   display: flex;
@@ -22,14 +28,19 @@ const CartDisplay = styled.section`
   padding-right: 25px;
 `;
 
-const Header = ({userSessionData}) => (
+const Header = ({userSessionData, productId}) => (
   <HeaderStyle>
     <Container>
       <h2>t h r 3 d s</h2>
       <SloganStyle>what's fresher than fresh? hygenic.</SloganStyle>
     </Container>
+    <div>
+      <SearchbarStyle>
+          <Searchbar />
+      </SearchbarStyle>
+    </div>
       <CartDisplay>
-        <Cart userSessionData={userSessionData}/>
+        <Cart userSessionData={userSessionData} productId={productId}/>
       </CartDisplay>
   </HeaderStyle>
 );

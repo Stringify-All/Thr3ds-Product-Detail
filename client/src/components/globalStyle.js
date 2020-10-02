@@ -1,8 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-// main page elements
-//  (background color, border color)
-//  (font family, size, color)
-
 const GlobalStyle = createGlobalStyle`
 
   h2 {
@@ -24,6 +20,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-image: url("https://i.ibb.co/r5jdb93/dangerzone.png");
+    background-position: right;
+    background-size: 15%;
+    object-fit: cover;
+    display: left;
+    background-repeat: no-repeat;
+    z-index: -1;
     margin: 30 auto;
     background-color: white;
     font-family: 'Ubuntu', sans-serif;

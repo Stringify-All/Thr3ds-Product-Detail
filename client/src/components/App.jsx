@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import GlobalStyle from './globalStyle';
+import getCart from '../API/GetCart';
 import getProducts from '../API/GetProducts';
 import getProductInfo from '../API/GetProductInfo';
 import getProductStyles from '../API/GetProductStyles';
+import getRatings from '../API/GetRatings';
 import AddItem from './AddToCart';
 import Header from './Header';
 import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
 import SloganDescription from './SecondaryDescription';
 import RelatedStyles from './StyleSelector';
-import getCart from '../API/GetCart';
+
 
 const App = () => {
 
+  const [ratings, setRatings] = useState(4);
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(7);
+  const [selectedProduct, setSelectedProduct] = useState(5);
   const [currentStyle, setCurrentStyle] = useState([]);
-  // could set state for style index
   const [relatedStyles, setRelatedStyles] = useState([]);
-  const [userId, setUserId] = useState(1234);
+  const [userId, setUserId] = useState(1235);
   const [userSessionData, setUserSessionData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
@@ -52,6 +54,12 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    getRatings(selectedProduct)
+      .then((data) => setRatings(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
     <GlobalStyle />
@@ -65,12 +73,16 @@ const App = () => {
           <div class="col-sm-4">
             <ProductDescription 
             selected={selectedProduct} 
-            style={currentStyle}/>
+            style={currentStyle}
+            ratings={ratings}/>
             <RelatedStyles
             selectedStyleHandler={setCurrentStyle}
             selected={currentStyle}
             relatedStyles={relatedStyles}/>
-            <AddItem styleData={currentStyle}/>
+            <AddItem productData={selectedProduct} 
+            userId={userId} 
+            styleData={currentStyle}
+            updateCartHeader={setUserSessionData}/>
           </div>
         </div>
         <SloganDescription 

@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const SectionStyle = styled.section`
+  padding-bottom: 100px;
+`;
+
 const SloganHeader = styled.h1`
   padding-top: 10px;
   padding-left: 20px;
@@ -17,7 +21,7 @@ const SloganDesc = styled.div`
 
 const Line = styled.section`
   border-left: 1px solid gray;
-  height: 100px;
+  height: 140px;
   position: absolute;
 `;
 
@@ -44,6 +48,7 @@ const SloganDescription = ({selected}) => {
 
   return (
     <div class="container">
+    <SectionStyle>
       <div class="row">  
         <div class="col-sm-8">
           <SloganHeader>
@@ -62,6 +67,7 @@ const SloganDescription = ({selected}) => {
           </ColumnPadding>
         </div>
       </div>
+    </SectionStyle>
     </div>
   )
 

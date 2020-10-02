@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const QuantityButton = ({quantities, quantitySelector, size}) => {
-  console.log('size: ', size);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);

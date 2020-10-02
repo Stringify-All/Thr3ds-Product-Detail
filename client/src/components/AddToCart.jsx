@@ -3,12 +3,25 @@ import AddItemButton from './buttons/AddItemButton';
 import QuantityButton from './buttons/QuantitySelector';
 import SelectSizeButton from './buttons/SizeSelector';
 import addToCart from '../API/PostCart.js';
+import getCart from '../API/GetCart';
 
-const AddItem = ({styleData}) => {
+const AddItem = ({productData, userId, styleData, updateCartHeader}) => {
   const name = styleData.name;
   const price = styleData.original_price - styleData.sale_price;
   const [selectedSize, setSelectedSize] = useState('');
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(0)
+
+  const addToCartHandler = () => {
+    const userSessionData = {
+      user_session: userId,
+      product_id: productData.id,
+    };
+
+    addToCart(userSessionData)
+    .then((res) => console.log(res))
+    .then(() => getCart(userId))
+    .then((data) => updateCartHeader(data));
+  }
   
   const cartValues = {
     name: name,
@@ -36,7 +49,12 @@ const AddItem = ({styleData}) => {
         </div>
         <div class="row">
           <div class="col-md-12">
-            <AddItemButton cartValues={cartValues}/>
+            {selectedSize && quantity > 0 ? <AddItemButton cartValues={cartValues} 
+            addToCart={addToCartHandler}/> 
+            : <div class="col-md-12">
+                <button type="submit"
+                onClick={() => alert`Please select your style, size, and quantity.`}>Select Product Details</button>
+              </div>}
           </div>
         </div>
       </div>

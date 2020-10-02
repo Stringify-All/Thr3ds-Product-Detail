@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CarouselSection = styled.section`
   display: flex;
-  max-width: 500;
+  max-width: 600;
   max-height: 600;
   object-fit: cover;
 `;
@@ -16,6 +16,7 @@ const DefaultStyled = styled.section`
   object-fit: cover;
   display: flex;
   background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 const PhotoCarousel = ({currentStyle, currentProduct}) => {
@@ -30,14 +31,10 @@ const PhotoCarousel = ({currentStyle, currentProduct}) => {
     setIndex(selectedIndex);
   };
   
-  if (currentProduct !== undefined) {
-    console.log('selected product: ', currentProduct);
-  }
-  
   return (
       <>
-      {photos ? 
-        <CarouselSection>
+      <CarouselSection>
+        {photos ? 
           <Carousel activeIndex={index} onSelect={handleSelect}>
             { photos.map((photo) => (
               <Carousel.Item key={currentStyle.style_id}>
@@ -50,9 +47,9 @@ const PhotoCarousel = ({currentStyle, currentProduct}) => {
               </Carousel.Item> 
             ))}
           </Carousel>
+        : <DefaultStyled>
+          </DefaultStyled>}
         </CarouselSection>
-      : <DefaultStyled>
-        </DefaultStyled>}
       </>
     );
 };
