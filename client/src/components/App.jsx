@@ -14,7 +14,7 @@ import getCart from '../API/GetCart';
 const App = () => {
 
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(7);
   const [currentStyle, setCurrentStyle] = useState([]);
   const [relatedStyles, setRelatedStyles] = useState([]);
   const [userId, setUserId] = useState(1234);
@@ -58,12 +58,12 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel currentStyle={currentStyle} />
+            <PhotoCarousel currentStyle={currentStyle}/>
           </div>
           <div class="col-sm-4">
             <ProductDescription 
             selected={selectedProduct} 
-            style={currentStyle} />
+            style={currentStyle}/>
             <RelatedStyles
             selectedStyleHandler={setCurrentStyle}
             selected={currentStyle}
@@ -73,7 +73,7 @@ const App = () => {
         </div>
         <SloganDescription 
         selected={selectedProduct}
-        style={currentStyle} />
+        style={currentStyle}/>
     </div>
     </>
   );

@@ -1,11 +1,37 @@
-import React, {useState} from 'react';
-import Menu from '@material-ui/core/Menu';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import Menu from '@material-ui/core/Menu';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
 const QuantityButton = ({quantities, quantitySelector, size}) => {
-  
   console.log('size: ', size);
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index, quantity) => {
+    quantitySelector(quantity);
+    setSelectedIndex(index);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const skus = quantities.skus;
   if (skus !== undefined) {
     let qArray = Object.entries(skus);
@@ -14,33 +40,53 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
     for (let i = 0; i < qArray.length; i++) {
       if (qArray[i].includes(size)) {
         inStock = qArray[i][1];
-        console.log('in stock: ', inStock);
-        for (let j = 1; j < inStock + 1; j++) {
+        for (let j = 0; j < inStock + 1; j++) {
           qSelectorArr.push(j);
         }
       }
     }
-    
+
+    if (qSelectorArr.length > 14) {
+      qSelectorArr.slice(0, 14);
+    };
+  
     return (
-      <PopupState variant="popover" popupId="size-popup-menu">
-        {(popupState) => (
-          <>
-            <button {...bindTrigger(popupState)}>
-              1 v
-            </button>
-            <Menu {...bindMenu(popupState)}>
-              {(qSelectorArr.map(quantity => (
-              <MenuItem onClick={() => quantitySelector(quantity)}>{quantity}
-              </MenuItem>
-          )))}
-            </Menu>
-          </>
-        )}
-      </PopupState>
-    )
+      <div className={classes.root}>
+        {size ? true : false}
+        <List component="nav" aria-label="Quantity selector">
+          <ListItem
+            button
+            aria-haspopup="true"
+            aria-controls="lock-menu"
+            aria-label="when device is locked"
+            onClick={handleClickListItem}
+          >
+            <ListItemText primary="Quantity" secondary={qSelectorArr[selectedIndex]} />
+          </ListItem>
+        </List>
+        <Menu
+          id="lock-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          {qSelectorArr.map((quantity, index) => (
+            <MenuItem
+              key={quantity}
+              disabled={index === 0}
+              selected={index === selectedIndex}
+              onClick={(event) => handleMenuItemClick(event, index, quantity)}
+            >
+              {quantity}
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
+    );
   } else {
     return (<div>Loading...</div>);
-  };
+  };  
 };
 
 export default QuantityButton;

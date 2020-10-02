@@ -20,9 +20,10 @@ const useStyles = makeStyles(() => ({
 
 const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
   const classes = useStyles();
+  console.log('selected: ', selected)
 
   const ThumbnailRender = () => {
-    if (relatedStyles !== undefined) {
+    if (relatedStyles !== undefined && selected !== undefined) {
       return (
         <div class="container">
           <div class="row">

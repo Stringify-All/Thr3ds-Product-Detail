@@ -20,8 +20,6 @@ const AddItem = ({styleData}) => {
     total_price: (price * quantity),
   };
 
-  console.log('cart values: ', cartValues);
-
   return (
     <>
       <div class="container">
@@ -32,17 +30,14 @@ const AddItem = ({styleData}) => {
             size={selectedSize}/>
           </div>
           <div class="col-md-4">
-            <QuantityButton quantities={styleData}
+            {selectedSize ? <QuantityButton quantities={styleData}
             quantitySelector={setQuantity}
-            size={selectedSize}/>
+            size={selectedSize}/> : <div></div>}
           </div>
         </div>
         <div class="row">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <AddItemButton cartValues={cartValues}/>
-          </div>
-          <div class="col-md-2">
-            <button>*</button>
           </div>
         </div>
       </div>
