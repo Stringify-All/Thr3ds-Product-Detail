@@ -16,6 +16,7 @@ const App = () => {
   const [productList, setProductList] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(7);
   const [currentStyle, setCurrentStyle] = useState([]);
+  // could set state for style index
   const [relatedStyles, setRelatedStyles] = useState([]);
   const [userId, setUserId] = useState(1234);
   const [userSessionData, setUserSessionData] = useState([]);
@@ -35,7 +36,7 @@ const App = () => {
 
   useEffect(() => {
     getProductStyles(selectedProduct)
-      .then((data) => setCurrentStyle(data.results[0]))
+      .then((data) => setCurrentStyle([]))
       .catch((err) => console.log(err));
   }, []);
 
@@ -58,7 +59,8 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel currentStyle={currentStyle}/>
+            <PhotoCarousel currentStyle={currentStyle} 
+            currentProduct={selectedProduct}/>
           </div>
           <div class="col-sm-4">
             <ProductDescription 

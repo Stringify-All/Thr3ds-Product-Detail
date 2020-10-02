@@ -76,7 +76,7 @@ const ProductDescription = ({selected, style}) => {
             </div>
           </div>
         </div>
-        <div>* * * * * ratings here</div>
+          <div>* * * * * ratings here</div>
         <div>
           <p><b>Category &gt; </b>{selected.category}</p>
         </div>
@@ -89,10 +89,10 @@ const ProductDescription = ({selected, style}) => {
         <div>
           ${style.original_price}
         </div>
-      </>
+        </>
     );
   } else {
-    return (<div>Loading...</div>);
+    return (<div>Please select a style</div>);
   }
 }
 

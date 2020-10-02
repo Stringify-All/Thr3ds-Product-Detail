@@ -27,14 +27,14 @@ const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
       return (
         <div class="container">
           <div class="row">
-            {relatedStyles.map((style, selected) => (
+            {relatedStyles.map((style) => (
               <div key="style.style_id" class="col-sm-3">
               <Box p={1}>
               <Badge
                 badgeContent="✓"
                 color="secondary"
                 overlap="circle"
-                invisible={selected}>
+                invisible={selected !== style}>
               <Avatar
                 src={style.photos[0].thumbnail_url}
                 alt={style.name}

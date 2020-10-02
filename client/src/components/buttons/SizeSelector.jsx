@@ -68,7 +68,7 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
     </div>
   );
   } else {
-    return (<div>Loading...</div>);
+    return (<div>Please select a style.</div>);
   };
 };
 

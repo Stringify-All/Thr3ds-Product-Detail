@@ -9,7 +9,16 @@ const CarouselSection = styled.section`
   object-fit: cover;
 `;
 
-const PhotoCarousel = ({currentStyle}) => {
+const DefaultStyled = styled.section`
+  background-image: url(${'https://i.ibb.co/0Y6ypRF/selectstyle.png'});
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
+  display: flex;
+  background-repeat: no-repeat;
+`;
+
+const PhotoCarousel = ({currentStyle, currentProduct}) => {
   const [index, setIndex] = useState(0);
   const [photos, setPhotos] = useState([]);
 
@@ -20,13 +29,17 @@ const PhotoCarousel = ({currentStyle}) => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-
+  
+  if (currentProduct !== undefined) {
+    console.log('selected product: ', currentProduct);
+  }
+  
   return (
       <>
+      {photos ? 
         <CarouselSection>
           <Carousel activeIndex={index} onSelect={handleSelect}>
-          {photos ? 
-            photos.map((photo) => (
+            { photos.map((photo) => (
               <Carousel.Item key={currentStyle.style_id}>
                   <img
                     class="img-fluid"
@@ -34,10 +47,12 @@ const PhotoCarousel = ({currentStyle}) => {
                     src={photo.url}
                     alt="Placeholder"
                   />
-              </Carousel.Item>
-        )) : <div>Loading... </div>}
+              </Carousel.Item> 
+            ))}
           </Carousel>
         </CarouselSection>
+      : <DefaultStyled>
+        </DefaultStyled>}
       </>
     );
 };

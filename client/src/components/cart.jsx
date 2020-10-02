@@ -11,41 +11,8 @@ const StyledCart = styled.section`
   display: flex;
 `;
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-const cartCard = ({userSessionData}) => {
-  const classes = useStyles();
-
-  return (
-    <Card className={classes.root}>
-      {userSessionData.map((user) => 
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {user.product_id}
-        </Typography>
-      </CardContent>
-      )}
-    </Card>
-  )
-};
-
 const Cart = ({userSessionData}) => {
-  
+
   return (
     <>
       <Card />

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import AddItemButton from './buttons/AddItemButton';
 import QuantityButton from './buttons/QuantitySelector';
 import SelectSizeButton from './buttons/SizeSelector';
-import styled from 'styled-components';
-import { SkipNextOutlined } from '@material-ui/icons';
+import addToCart from '../API/PostCart.js';
 
 const AddItem = ({styleData}) => {
   const name = styleData.name;
@@ -13,7 +12,7 @@ const AddItem = ({styleData}) => {
   
   const cartValues = {
     name: name,
-    price: price,
+    price: price, 
     size: selectedSize,
     quantity: quantity,
     added: false,

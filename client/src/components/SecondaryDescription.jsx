@@ -6,6 +6,7 @@ const SloganHeader = styled.h1`
   padding-left: 20px;
   font-size: 16px;
   font-style: bold;
+  background: transparent;
 `;
 
 const SloganDesc = styled.div`

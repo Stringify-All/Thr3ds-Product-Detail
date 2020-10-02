@@ -1,10 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
-
 // main page elements
 //  (background color, border color)
 //  (font family, size, color)
 
 const GlobalStyle = createGlobalStyle`
+
+  h2 {
+    font-family: 'Robertson Alternate';
+    src: url('./resources/Robertson-Alternate.ttf') format('truetype');
+    font-weight: normal;
+    color: red;
+    font-size: 60px;
+    margin-left: 20px;
+    padding-left: 20px;
+  }
 
   h1 {
     font-family: 'Roboto', 'sans-serif';
