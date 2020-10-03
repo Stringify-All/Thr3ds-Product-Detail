@@ -10,6 +10,18 @@ import {
 const ProductDescription = ({selected, style, ratings}) => {
   const url = "https://www.youtube.com/watch?v=siwpn14IE7E";
 
+  const SalePriceHandler = () => {
+    if (style.id !== null && style.sale_price > 0) {
+      return (
+        <div><strike>${style.original_price}</strike> ${style.sale_price}</div>
+      );
+    } else {
+      return (
+        <div>${style.original_price}</div>
+      );
+    };
+  };
+
   const ShareFacebook = () => {
     return (
       <Box p={1}>
@@ -96,13 +108,13 @@ const ProductDescription = ({selected, style, ratings}) => {
           <p><b>Current style &gt; </b>{style.name}</p> 
         </div>
         <div>
-          ${style.original_price}
+          {SalePriceHandler()}
         </div> 
         </>
     );
   } else {
     return (<div></div>);
-  }
-}
+  };
+};
 
 export default ProductDescription;

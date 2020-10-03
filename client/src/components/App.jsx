@@ -12,15 +12,14 @@ import ProductDescription from './MainDescription';
 import SloganDescription from './SecondaryDescription';
 import RelatedStyles from './StyleSelector';
 
-
 const App = () => {
 
-  const [ratings, setRatings] = useState(4);
+  const [ratings, setRatings] = useState(1);
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(5);
+  const [selectedProduct, setSelectedProduct] = useState(1);
   const [currentStyle, setCurrentStyle] = useState([]);
   const [relatedStyles, setRelatedStyles] = useState([]);
-  const [userId, setUserId] = useState(1235);
+  const [userId, setUserId] = useState(1236);
   const [userSessionData, setUserSessionData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
@@ -63,7 +62,8 @@ const App = () => {
   return (
     <>
     <GlobalStyle />
-      <Header userSessionData={userSessionData}/>
+      <Header userSessionData={userSessionData}
+      productList={productList}/>
       <div class="container">
         <div class="row">
           <div class="col-sm-8">

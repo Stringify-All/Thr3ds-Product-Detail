@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import Box from '@material-ui/core/Box';
 import styled from 'styled-components';
 import Cart from './Cart';
 import Searchbar from './Searchbar';
@@ -7,6 +7,13 @@ import Searchbar from './Searchbar';
 const SearchbarStyle = styled.div`
   display: flex;
   padding-right: 2em;
+`;
+
+const BoxStyle = styled.div`
+  position: left;
+  display: inline-block;
+  padding-left: 20px;
+  size: 100%;
 `;
 
 const HeaderStyle = styled.section`
@@ -26,17 +33,20 @@ const CartDisplay = styled.section`
   display: flex;
   align-items: center;
   padding-right: 25px;
+  position: right; 
 `;
 
-const Header = ({userSessionData, productId}) => (
+const Header = ({userSessionData, productId, productList}) => (
   <HeaderStyle>
-    <Container>
+    <Box>
+    <BoxStyle>
       <h2>t h r 3 d s</h2>
       <SloganStyle>what's fresher than fresh? hygenic.</SloganStyle>
-    </Container>
+    </BoxStyle>
+    </Box>
     <div>
       <SearchbarStyle>
-          <Searchbar />
+          <Searchbar products={productList}/>
       </SearchbarStyle>
     </div>
       <CartDisplay>

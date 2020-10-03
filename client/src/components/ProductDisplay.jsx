@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
+import Zoom from 'react-medium-image-zoom';
 
 const CarouselSection = styled.section`
   display: flex;
-  max-width: 600;
-  max-height: 600;
+  width: 600;
+  height: 600;
   object-fit: cover;
+`;
+
+const CarouselImageStyle = styled.div`
+  object-fit: cover;
+  display: block;
 `;
 
 const DefaultStyled = styled.section`
@@ -38,12 +44,15 @@ const PhotoCarousel = ({currentStyle, currentProduct}) => {
           <Carousel activeIndex={index} onSelect={handleSelect}>
             { photos.map((photo) => (
               <Carousel.Item key={currentStyle.style_id}>
+              <CarouselImageStyle>
                   <img
                     class="img-fluid"
                     className="d-block w-100"
                     src={photo.url}
                     alt="Placeholder"
+                    onClick={() => setIsZoomed(true)}
                   />
+              </CarouselImageStyle>
               </Carousel.Item> 
             ))}
           </Carousel>
