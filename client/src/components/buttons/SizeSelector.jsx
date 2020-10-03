@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SelectSizeButton = ({ sizes, sizeSelector }) => {
-  
   if (sizes.skus !== undefined) {
     const skuArray = Object.keys(sizes.skus);
     const classes = useStyles();

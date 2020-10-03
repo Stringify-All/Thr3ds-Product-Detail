@@ -34,6 +34,7 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
   const skus = quantities.skus;
   if (skus !== undefined) {
     let qArray = Object.entries(skus);
+    console.log('q array: ', qArray);
     let qSelectorArr = [];
     let inStock = null;
     for (let i = 0; i < qArray.length; i++) {
@@ -44,10 +45,7 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
         }
       }
     }
-
-    if (qSelectorArr.length > 14) {
-      qSelectorArr.slice(0, 14);
-    };
+    qSelectorArr.splice(16, qSelectorArr.length);
   
     return (
       <div className={classes.root}>
