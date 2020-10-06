@@ -60,7 +60,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div>
     <GlobalStyle />
       <Header userSessionData={userSessionData}
       productList={productList}/>
@@ -88,8 +88,8 @@ const App = () => {
         <SloganDescription 
         selected={selectedProduct}
         style={currentStyle}/>
+      </div>
     </div>
-    </>
   );
 };
 
