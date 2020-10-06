@@ -6,8 +6,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
-      width: '35ch',
-      display: 'flex',
+      height: 'auto',
+      width: '115%',
+      display: 'inline-block',
     },
   },
 }));

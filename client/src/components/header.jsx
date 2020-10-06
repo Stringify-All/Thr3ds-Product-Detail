@@ -1,22 +1,27 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import styled from 'styled-components';
 import Cart from './Cart';
 import Searchbar from './Searchbar';
 
 const SearchbarStyle = styled.div`
-  display: flex;
+  display: inline-block;
   padding-right: 2em;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  width: auto;
 `;
 
 const BoxStyle = styled.div`
-  position: left;
+  position: relative;
   display: inline-block;
   padding-left: 20px;
-  size: 100%;
+  padding-right: 100px;
+  height: auto;
+  width: 100%;
 `;
 
-const HeaderStyle = styled.section`
+const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
   padding-top: 15px;
@@ -29,21 +34,21 @@ const SloganStyle = styled.p`
   font-size: 14px;
 `;
 
-const CartDisplay = styled.section`
+const CartDisplay = styled.div`
   display: flex;
   align-items: center;
   padding-right: 25px;
-  position: right; 
+  position: relative;
+  height: 100%;
+  width: auto;
 `;
 
 const Header = ({userSessionData, productId, productList}) => (
   <HeaderStyle>
-    <Box>
     <BoxStyle>
       <h2>t h r 3 d s</h2>
       <SloganStyle>what's fresher than fresh? hygenic.</SloganStyle>
     </BoxStyle>
-    </Box>
     <div>
       <SearchbarStyle>
           <Searchbar products={productList}/>

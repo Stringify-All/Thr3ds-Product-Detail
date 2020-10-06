@@ -4,10 +4,14 @@ import Card from '@material-ui/core/Card';
 import Badge from '@material-ui/core/Badge';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
-const StyledCart = styled.section`
-  margin-right: 150px;
-  align-content: center;
+const StyledCart = styled.div`
+  align-content: right;
   display: flex;
+  position: relative;
+  float: right;
+  margin: 0 1.5%;
+  width: 30%;
+  text-align: right;
 `;
 
 const Cart = ({userSessionData}) => {
