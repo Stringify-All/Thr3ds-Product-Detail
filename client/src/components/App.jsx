@@ -68,7 +68,7 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <div className="carousel-sec-style-kg">
+            <div>
               <PhotoCarousel currentStyle={currentStyle} 
               currentProduct={selectedProduct}/>
             </div>
