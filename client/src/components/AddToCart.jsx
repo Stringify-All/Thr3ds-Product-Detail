@@ -54,7 +54,7 @@ const AddItem = ({productData, userId, styleData, updateCartHeader}) => {
             {selectedSize && quantity > 0 ? <AddItemButton cartValues={cartValues} 
             addToCart={addToCartHandler}/> 
             : <div class="col-md-12">
-                <button type="submit"
+                <button id="button-kg" type="submit"
                 onClick={() => alert`Please select your style, size, and quantity.`}>Select Product Details</button>
               </div>}
           </div>

@@ -3,12 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Badge from '@material-ui/core/Badge';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import styled from 'styled-components';
-
-const AvatarStyle = styled.div`
-  border: 2px solid white;
-  border-radius: 50%;
-`;
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -40,14 +34,14 @@ const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
                 color="secondary"
                 overlap="circle"
                 invisible={selected !== style}>
-              <AvatarStyle>
+              <div className="avatar-style">
               <Avatar
                 src={style.photos[0].thumbnail_url}
                 alt={style.name}
                 className={classes.root}
 
                 onClick={() => selectedStyleHandler(style)}/>
-              </AvatarStyle>
+              </div>
               </Badge>
               </Box>
               </div>

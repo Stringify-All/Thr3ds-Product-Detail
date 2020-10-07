@@ -4,7 +4,7 @@ const AddItemButton = ({addToCart}) => {
 
     return(
     <>
-      <button type="submit" 
+      <button id="button-kg" type="submit" 
       onClick={() => addToCart()}>Add To Bag +</button>
     </>
   )

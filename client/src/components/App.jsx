@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import GlobalStyle from './globalStyle';
+// import GlobalStyle from './globalStyle';
 import getCart from '../API/GetCart';
 import getProducts from '../API/GetProducts';
 import getProductInfo from '../API/GetProductInfo';
@@ -11,6 +11,8 @@ import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
 import SloganDescription from './SecondaryDescription';
 import RelatedStyles from './StyleSelector';
+import './App.css';
+
 
 const App = () => {
 
@@ -60,9 +62,8 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-    <GlobalStyle />
-      <Header userSessionData={userSessionData}
+    <div id="body-kg">
+      <Header className="headerStyle-kg" userSessionData={userSessionData}
       productList={productList}/>
       <div class="container">
         <div class="row">

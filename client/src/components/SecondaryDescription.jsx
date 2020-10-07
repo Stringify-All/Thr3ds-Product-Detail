@@ -1,33 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const SectionStyle = styled.section`
-  padding-bottom: 100px;
-`;
-
-const SloganHeader = styled.h1`
-  padding-top: 10px;
-  padding-left: 20px;
-  font-size: 16px;
-  font-style: bold;
-  background: transparent;
-`;
-
-const SloganDesc = styled.div`
-  padding-left: 20px;
-  font-size: 14px;
-  list-style: none;
-`;
-
-const Line = styled.section`
-  border-left: 1px solid gray;
-  height: 140px;
-  position: absolute;
-`;
-
-const ColumnPadding = styled.section`
-  padding-top: 20px;
-`;
 
 const SloganDescription = ({selected}) => {
 
@@ -48,26 +19,25 @@ const SloganDescription = ({selected}) => {
 
   return (
     <div class="container">
-    <SectionStyle>
+    <div id="slogan-section-kg">
       <div class="row">  
         <div class="col-sm-8">
-          <SloganHeader>
-            <p>{selected.slogan}</p>
-          </SloganHeader>
-          <SloganDesc>
+          <div id="slogan-header-kg">
+            <p><b>{selected.slogan}</b></p>
+          </div>
+          <div id="slogan-description-kg">
             {selected.description}
-          </SloganDesc>
+          </div>
         </div>
         <div class="col-sm-4">
-          <ColumnPadding>
-            <Line></Line>
-            <SloganDesc>
+          <div className="slogan-column-kg">
+            <div id="slogan-description-kg">
               { FeatureRender() }
-            </SloganDesc>
-          </ColumnPadding>
+            </div>
+          </div>
         </div>
       </div>
-    </SectionStyle>
+    </div>
     </div>
   )
 
