@@ -68,8 +68,10 @@ const App = () => {
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <PhotoCarousel currentStyle={currentStyle} 
-            currentProduct={selectedProduct}/>
+            <div className="carousel-sec-style-kg">
+              <PhotoCarousel currentStyle={currentStyle} 
+              currentProduct={selectedProduct}/>
+            </div>
           </div>
           <div class="col-sm-4">
             <ProductDescription 

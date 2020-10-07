@@ -140,6 +140,7 @@ h1 {
   font-style: bold;
   color: #056676;
   background: transparent;
+  display: flex; 
 }
 
 #slogan-description-kg {
@@ -147,6 +148,7 @@ h1 {
   font-size: 14px;
   list-style: none;
   color: #056676;
+  display: flex;
 }
 
 .slogan-column-kg {

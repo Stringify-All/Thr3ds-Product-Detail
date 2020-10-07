@@ -37,7 +37,7 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
       <div className={classes.kroot}>
       <List component="nav" aria-label="Size selector">
         <ListItem
-          button
+          button 
           aria-haspopup="true"
           aria-controls="lock-menu"
           aria-label="when device is locked"
