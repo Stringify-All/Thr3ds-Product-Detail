@@ -88,9 +88,11 @@ const App = () => {
             updateCartHeader={setUserSessionData}/>
           </div>
         </div>
-        <SloganDescription 
-        selected={selectedProduct}
-        style={currentStyle}/>
+        <div>
+          <SloganDescription 
+          selected={selectedProduct}
+          style={currentStyle}/>
+        </div>
       </div>
     </div>
   );

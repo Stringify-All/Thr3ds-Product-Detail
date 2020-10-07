@@ -19,25 +19,25 @@ const SloganDescription = ({selected}) => {
 
   return (
     <div class="container">
-    <div id="slogan-section-kg">
-      <div class="row">  
-        <div class="col-sm-8">
-          <div id="slogan-header-kg">
-            <p><b>{selected.slogan}</b></p>
-          </div>
-          <div id="slogan-description-kg">
-            {selected.description}
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div className="slogan-column-kg">
+      <div id="slogan-section-kg">
+        <div class="row">  
+          <div class="col-sm-8">
+            <div id="slogan-header-kg">
+              <p><b>{selected.slogan}</b></p>
+            </div>
             <div id="slogan-description-kg">
-              { FeatureRender() }
+              {selected.description}
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div className="slogan-column-kg">
+              <div id="slogan-description-kg">
+                { FeatureRender() }
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   )
 
