@@ -7,7 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  kroot: {
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -34,7 +34,7 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
     };
 
     return ( 
-      <div className={classes.root}>
+      <div className={classes.kroot}>
       <List component="nav" aria-label="Size selector">
         <ListItem
           button

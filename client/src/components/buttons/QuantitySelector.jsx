@@ -7,7 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  kroot: {
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -48,7 +48,7 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
     qSelectorArr.splice(16, qSelectorArr.length);
   
     return (
-      <div className={classes.root}>
+      <div className={classes.kroot}>
         {size ? true : false}
         <List component="nav" aria-label="Quantity selector">
           <ListItem

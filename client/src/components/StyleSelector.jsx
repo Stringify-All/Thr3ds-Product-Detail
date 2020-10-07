@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  root: {
+  kroot: {
     display: 'flex',
     paddingTop: '20',
     '& > *': {
@@ -38,8 +38,7 @@ const RelatedStyles = ({relatedStyles, selected, selectedStyleHandler}) => {
               <Avatar
                 src={style.photos[0].thumbnail_url}
                 alt={style.name}
-                className={classes.root}
-
+                className={classes.kroot}
                 onClick={() => selectedStyleHandler(style)}/>
               </div>
               </Badge>
