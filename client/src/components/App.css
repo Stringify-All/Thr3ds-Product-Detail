@@ -1,4 +1,4 @@
-h2 {
+.header-logo-kg {
   font-family: 'Robertson Alternate';
   src: url('./resources/Robertson-Alternate.ttf') format('truetype');
   font-weight: normal;
@@ -54,13 +54,14 @@ h1 {
 }
 
 #cart-kg {
-  align-content: right;
+  float: right;
   display: flex;
   position: relative;
   float: right;
   margin: 0 1.5%;
   width: 30%;
   text-align: right;
+  padding-right: 40px;
 }
 
 #header-style-kg {
@@ -80,7 +81,7 @@ h1 {
   width: auto;
 }
 
-box-style-kg {
+.box-style-kg {
   position: relative;
   display: flex;
   padding-left: 20px;
@@ -90,35 +91,35 @@ box-style-kg {
 }
 
 
-slogan-style-kg {
+.slogan-style-kg {
   font-weight: 500;
   font-size: 14px;
 }
 
-cart-display-kg {
+.cart-display-kg {
   display: flex;
   align-items: center;
-  padding-right: 25px;
+  padding-right: 40px;
   position: relative;
   height: 100%;
   width: auto;
 }
 
-carousel-sec-style-kg {
+.carousel-sec-style-kg {
   display: flex;
   width: 600;
   height: 600;
   object-fit: cover;
 }
 
-carousel-img-style-kg {
+.carousel-img-style-kg {
   height: 700px;
   width: auto;
   object-fit: cover;
   display: block;
 }
 
-default-img-kg {
+.default-img-kg {
   background-image: url('https://i.ibb.co/0Y6ypRF/selectstyle.png');
   height: 600px;
   width: 600px;
@@ -148,11 +149,11 @@ default-img-kg {
   color: #056676;
 }
 
-slogan-column-kg {
+.slogan-column-kg {
   padding-top: 20px;
 }
 
-avatar-style {
+.avatar-style {
   border: 2px solid white;
   border-radius: 50%;
 }
