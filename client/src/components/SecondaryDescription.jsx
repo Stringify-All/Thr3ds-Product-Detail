@@ -30,10 +30,8 @@ const SloganDescription = ({selected}) => {
             </div>
           </div>
           <div class="col-sm-4">
-            <div className="slogan-column-kg">
-              <div id="slogan-description-kg">
-                { FeatureRender() }
-              </div>
+            <div>
+              { FeatureRender() }
             </div>
           </div>
         </div>

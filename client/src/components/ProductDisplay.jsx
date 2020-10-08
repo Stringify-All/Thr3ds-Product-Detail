@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 import styled from 'styled-components';
 
 const CarouselSection = styled.section`
@@ -14,6 +16,7 @@ const CarouselImageStyle = styled.div`
   width: auto;
   object-fit: cover;
   display: block;
+  &:hover { cursor: zoom-in };
 `;
 
 const DefaultStyled = styled.section`
@@ -45,16 +48,18 @@ const PhotoCarousel = ({currentStyle, currentProduct}) => {
           <Carousel activeIndex={index} onSelect={handleSelect} pause={'hover'}>
             { photos.map((photo) => (
               <Carousel.Item key={currentStyle.style_id}>
-              <CarouselImageStyle>
-                  <img
-                    class="img-fluid"
-                    className="d-block w-100"
-                    src={photo.url}
-                    alt="Placeholder"
-                    height="700"
-                    width="auto"
-                  />
-              </CarouselImageStyle>
+                <CarouselImageStyle>
+                  <Zoom zoomZindex={2}>
+                    <img
+                      class="img-fluid"
+                      className="d-block w-100"
+                      src={photo.url}
+                      alt="Placeholder"
+                      height="700"
+                      width="auto"
+                    />
+                  </Zoom>
+                </CarouselImageStyle>
               </Carousel.Item> 
             ))}
           </Carousel>

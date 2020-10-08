@@ -36,6 +36,7 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
     return ( 
       <div className={classes.kroot}>
       <List component="nav" aria-label="Size selector">
+      <div className="px-2">
         <ListItem
           button 
           aria-haspopup="true"
@@ -45,6 +46,7 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
         >
           <ListItemText primary="Select Size" secondary={skuArray[selectedIndex]} />
         </ListItem>
+      </div>
       </List>
       <Menu
         id="lock-menu"

@@ -18,7 +18,7 @@ const App = () => {
 
   const [ratings, setRatings] = useState(1);
   const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(5);
   const [currentStyle, setCurrentStyle] = useState([]);
   const [relatedStyles, setRelatedStyles] = useState([]);
   const [userId, setUserId] = useState(1236);
@@ -88,7 +88,7 @@ const App = () => {
             updateCartHeader={setUserSessionData}/>
           </div>
         </div>
-        <div>
+        <div class="row">
           <SloganDescription 
           selected={selectedProduct}
           style={currentStyle}/>
