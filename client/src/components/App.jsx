@@ -21,7 +21,7 @@ const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(5);
   const [currentStyle, setCurrentStyle] = useState([]);
   const [relatedStyles, setRelatedStyles] = useState([]);
-  const [userId, setUserId] = useState(1236);
+  const [userId, setUserId] = useState(1237);
   const [userSessionData, setUserSessionData] = useState([]);
   const [cartData, setCartData] = useState([]);
 

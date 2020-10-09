@@ -1,11 +1,7 @@
-FROM node:current-slim
-WORKDIR /
-COPY package.json .
+FROM node:8.10-alpine
+RUN mkdir -p /src/app
+WORKDIR /src/app
+COPY . /src/app
 RUN npm install
-RUN npm build
-COPY package.json .
-RUN npm install
-RUN npm start
-EXPOSE 9003
-CMD [ "npm", "start", "build" ]
-COPY . .
+EXPOSE 9000
+CMD ["npm", "start"]

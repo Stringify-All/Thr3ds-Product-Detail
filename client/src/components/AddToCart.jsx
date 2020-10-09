@@ -10,9 +10,7 @@ const AddItem = ({productData, userId, styleData, updateCartHeader}) => {
   const price = styleData.original_price - styleData.sale_price;
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(0)
-  
-  console.log('style skus: ', styleData.skus);
-  
+ 
   const addToCartHandler = () => {
     const userSessionData = {
       user_session: userId,

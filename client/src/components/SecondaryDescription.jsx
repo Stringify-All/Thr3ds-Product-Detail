@@ -7,7 +7,7 @@ const SloganDescription = ({selected}) => {
       return (
         selected.features.map((feature) => (
         <div>
-          <li><b>{feature.feature}</b></li>
+          <li><strong>{feature.feature}</strong></li>
           <li>✓ {feature.value}</li>
         </div>
         )
