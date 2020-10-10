@@ -5,8 +5,10 @@ import Searchbar from './Searchbar';
 const Header = ({userSessionData, productId, productList}) => (
   <div id="header-style-kg">
     <div className="box-style-kg">
-      <h2 className="header-logo-kg">t h r 3 d s</h2>
-      <p>what's fresher than fresh? hygenic.</p>
+      <img className="header-logo-kg" src="https://i.ibb.co/kBm9mpK/thr3dslogo.png" alt="thr3dslogo" border="0"/>
+      <div className="slogan-style-kg">
+        what's fresher than fresh? hygenic.
+      </div>
     </div>
     <div>
       <div id="searchbar-kg">

@@ -8,7 +8,7 @@ const SloganDescription = ({selected}) => {
         selected.features.map((feature) => (
         <div>
           <li><strong>{feature.feature}</strong></li>
-          <li>✓ {feature.value}</li>
+          <li className="slogan-description-kg">✓ {feature.value}</li>
         </div>
         )
       )
@@ -38,7 +38,6 @@ const SloganDescription = ({selected}) => {
       </div>
     </div>
   )
-
 };
 
 export default SloganDescription;

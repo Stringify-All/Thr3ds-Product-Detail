@@ -63,7 +63,8 @@ const App = () => {
 
   return (
     <div id="body-kg">
-      <Header className="headerStyle-kg" userSessionData={userSessionData}
+      <Header className="headerStyle-kg" 
+      userSessionData={userSessionData}
       productList={productList}/>
       <div class="container">
         <div class="row">
