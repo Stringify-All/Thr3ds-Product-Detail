@@ -51,15 +51,17 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
       <div className={classes.kroot}>
         {size ? true : false}
         <List component="nav" aria-label="Quantity selector">
-          <ListItem
-            button
-            aria-haspopup="true"
-            aria-controls="lock-menu"
-            aria-label="when device is locked"
-            onClick={handleClickListItem}
-          >
+        <div className="px-2">
+            <ListItem
+              button
+              aria-haspopup="true"
+              aria-controls="lock-menu"
+              aria-label="when device is locked"
+              onClick={handleClickListItem}
+            >
             <ListItemText primary="Quantity" secondary={qSelectorArr[selectedIndex]} />
           </ListItem>
+        </div>
         </List>
         <Menu
           id="lock-menu"
@@ -69,14 +71,16 @@ const QuantityButton = ({quantities, quantitySelector, size}) => {
           onClose={handleClose}
         >
           {qSelectorArr.map((quantity, index) => (
-            <MenuItem
-              key={quantity}
-              disabled={index === 0}
-              selected={index === selectedIndex}
-              onClick={(event) => handleMenuItemClick(event, index, quantity)}
-            >
-              {quantity}
-            </MenuItem>
+            <div className="px-2">
+              <MenuItem
+                key={quantity}
+                disabled={index === 0}
+                selected={index === selectedIndex}
+                onClick={(event) => handleMenuItemClick(event, index, quantity)}
+              >
+                {quantity}
+              </MenuItem>
+            </div>
           ))}
         </Menu>
       </div>
