@@ -56,14 +56,16 @@ const SelectSizeButton = ({ sizes, sizeSelector }) => {
         onClose={handleClose}
       >
         {skuArray.map((sku, index) => (
-          <MenuItem
-            key={sku}
-            disabled={null}
-            selected={index === selectedIndex}
-            onClick={(event) => handleMenuItemClick(event, index, sku)}
-          >
-            {sku}
-          </MenuItem>
+          <div className="px-2">
+            <MenuItem
+              key={sku}
+              disabled={null}
+              selected={index === selectedIndex}
+              onClick={(event) => handleMenuItemClick(event, index, sku)}
+            >
+              {sku}
+            </MenuItem>
+          </div>
         ))}
       </Menu>
     </div>
