@@ -1,5 +1,5 @@
 import React from 'react';
-import Cart from './Cart';
+import Cart from './cart';
 import Searchbar from './Searchbar';
 
 const Header = ({userSessionData, productId, productList}) => (
