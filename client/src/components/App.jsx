@@ -5,7 +5,7 @@ import getProductInfo from '../API/GetProductInfo';
 import getProductStyles from '../API/GetProductStyles';
 import getRatings from '../API/GetRatings';
 import AddItem from './AddToCart';
-import Header from './Header';
+import Header from './header';
 import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
 import SloganDescription from './SecondaryDescription';
