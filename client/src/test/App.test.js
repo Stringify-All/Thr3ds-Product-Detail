@@ -8,7 +8,6 @@ import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../components/App.jsx';
-import { GetProducts } from '../API/GetProducts.js';
 
 configure({ adapter: new Adapter() });
 

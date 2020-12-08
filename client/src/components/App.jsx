@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import GlobalStyle from './globalStyle';
 import getCart from '../API/GetCart';
 import getProducts from '../API/GetProducts';
 import getProductInfo from '../API/GetProductInfo';
@@ -21,7 +20,7 @@ const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(5);
   const [currentStyle, setCurrentStyle] = useState([]);
   const [relatedStyles, setRelatedStyles] = useState([]);
-  const [userId, setUserId] = useState(1237);
+  const [userId, setUserId] = useState(1238);
   const [userSessionData, setUserSessionData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
