@@ -10,9 +10,9 @@
     ]
   },
   "scripts": {
-    "build": "webpack -d --watch",
+    "build": "webpack -d",
     "start": "cd server && npm start && cd ..",
-    "start:server": "node server/index.js -w server -w",
+    "start:server": "node server/index.js",
     "test": "jest"
   },
   "repository": {
