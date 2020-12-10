@@ -16,19 +16,35 @@
 </head>
 <body>
   <div id="product-overview"></div>
-  <!-- Tealium Universal Tag -->
+  <!-- SRC section for other components --> 
   <script type="text/javascript">
-    var utag_data = {}
+    var utag_data = {
+      ShareFacebook : "", // 
+      page_name : "", // Contains a user-friendly name for the page.
+      page_section : "", // Contains a user-friendly page section, e.g. 'configuration section'.
+      page_category : "", // Contains a user-friendly page category, e.g. 'appliance page'.
+      page_subcategory : "", // Contains a user-friendly page subcategory, e.g. 'refrigerator page'.
+      page_type : "", // Contains a user-friendly page type, e.g. 'cart page'.
+      customer_id : "", // Contains the customer's ID.
+      customer_username : "", // Contains the customer's username, e.g. johndoe38.
+      customer_status : "", // Contains the customer's status, e.g. 'logged in'.
+      customer_type : "", // Contains the customer's type, e.g. 'bronze member'.
+      customer_email : "", // Contains the customer's email.
+      customer_city : "", // Contains the city portion of the customer's address.
+      customer_state : "", // Contains the state portion of the customer's address.
+      customer_zip : "", // Contains the zip code portion of the customer's address.
+      customer_country : "" // Contains the country portion of the customer's address.
+    }
     </script>
     
     <!-- Loading script asynchronously -->
-    <script type="text/javascript">
-        (function(a,b,c,d){
-        a='https://tags.tiqcdn.com/utag/services-presentations/kyle-graas/prod/utag.js';
-        b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-        })();
-    </script>
+  <script type="text/javascript">
+    (function(a,b,c,d){
+    a='https://tags.tiqcdn.com/utag/services-presentations/kyle-graas/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+  </script>
   <!-- SRC section for other components --> 
   <script src="index_bundle.js"></script>
 </body>
