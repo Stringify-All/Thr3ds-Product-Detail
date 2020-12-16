@@ -37,14 +37,22 @@
     }
     </script>
     
-    <!-- Loading script asynchronously -->
-  <script type="text/javascript">
-    (function(a,b,c,d){
-    a='https://tags.tiqcdn.com/utag/services-presentations/kyle-graas/prod/utag.js';
-    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
-  </script>
+      <!-- Loading script asynchronously -->
+    <script type="text/javascript">
+      (function(a,b,c,d){
+      a='https://tags.tiqcdn.com/utag/services-presentations/kyle-graas/prod/utag.js';
+      b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+      a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      utag.view({
+        tealium_event : "page_view",
+        page_type : {STRING}, // Suggested
+        page_name : {STRING} // Required
+      });
+    </script>
 
   
 </body>
