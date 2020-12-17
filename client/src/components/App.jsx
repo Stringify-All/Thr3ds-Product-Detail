@@ -10,6 +10,7 @@ import PhotoCarousel from './ProductDisplay';
 import ProductDescription from './MainDescription';
 import SloganDescription from './SecondaryDescription';
 import RelatedStyles from './StyleSelector';
+import $ from 'jquery';
 import './App.css';
 
 
